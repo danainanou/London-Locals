@@ -1,0 +1,29 @@
+<h1>Bands</h1>
+
+<% if(locals.isLoggedIn) { %>
+  <a href="/bands/new" class="btn btn-primary">Add</a>
+<% } %>
+
+<div class="row">
+  <% bands.forEach((band) => { %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-img-top" style="background-image:url(<%= band.image[0] %>)" alt="<%= band.name %>"></div>
+        <div class="card-block">
+          <a href="/bands/<%= band.id %>">
+            <h4 class="card-title"><%= band.name %></h4>
+          </a>
+          <p class="card-text"><%= band.genre %></p>
+
+          <% if(locals.isLoggedIn) { %>
+            <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit</a>
+            <form method="POST" action="/bands/<%= band.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn btn-danger">Delete</button>
+            </form>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

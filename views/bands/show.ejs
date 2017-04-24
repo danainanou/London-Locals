@@ -1,0 +1,37 @@
+<h1><%= band.name %></h1>
+
+<div id="bandCarousel" class="carousel slide bg-faded" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <a class="carousel-control-prev" href="#bandCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#bandCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<a href="<%= band.website %>">Website</a>
+
+<h4>Genre</h4>
+<p><%= band.genre %></p>
+
+<form method="POST" action="/bands/<%= band.id %>/comments">
+  <div class="form-group">
+    <label for="body">Please leave a comment</label>
+    <textarea id="body" name="body" class="form-control"></textarea>
+  </div>
+  <input type="submit" class="btn">
+</form>
+
+<ul>
+<% band.comments.forEach(comment => { %>
+  <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
+  <%= comment.body %></li>
+<% }) %>
+</ul>
