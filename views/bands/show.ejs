@@ -6,6 +6,13 @@
 
 <h4>Genre</h4>
 <p><%= band.genre %></p>
+<% if(locals.isLoggedIn) { %>
+  <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit</a>
+  <form method="POST" action="/bands/<%= band.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="btn btn-danger">Delete</button>
+  </form>
+<% } %>
 
 <form method="POST" action="/bands/<%= band.id %>/comments">
   <div class="form-group">

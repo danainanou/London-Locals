@@ -2,32 +2,25 @@
 
 <form method="POST" action="/bands/<%= band.id %>">
   <input type="hidden" name="_method" value="PUT">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="<%= band.name %>">
-  </div>
-  <div class="form-group">
-    <label for="synopsis">Members</label>
-    <textarea name="synopsis" id="synopsis" placeholder="Synopsis" class="form-control"><%= band.members %></textarea>
-  </div>
-  <div class="form-group">
-    <label for="genre">Genre</label>
-    <select name="genre" id="genre" class="form-control select2">
-      <% genres.forEach((genre) => { %>
-        <option <% if(band.genre === genre) { %>selected<% } %>><%= genre %></option>
-      <% }) %>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="wikipedia">Website</label>
-    <input type="text" name="wikipedia" id="wikipedia" placeholder="Wikipedia Link" class="form-control" value="<%= band.website %>">
-  </div>
-  <div class="form-group">
-    <label>Images</label>
-    <input type="text" name="images[]" class="form-control" value="<%= band.image[0] %>">
-    <input type="text" name="images[]" class="form-control" value="<%= band.image[1] %>">
-    <input type="text" name="images[]" class="form-control" value="<%= band.image[2] %>">
-  </div>
-
-  <button class="btn btn-primary">Add</button>
-</form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="<%= band.name %>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="members">Members</label>
+    <input type="text" name="members" id="members" value="<%= band.members %>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input type="text" name="genre" id="genre" value="<%= band.genre %>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="website">Website or Facebook Page</label>
+      <input type="text" name="website" id="website" value="<%= band.website %>" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Band Image</label>
+      <input type="text" name="image" value="<%= band.image %>" class="form-control">
+    </div>
+    <button class="btn btn-primary">Update Band Info</button>
+  </form>
