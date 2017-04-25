@@ -32,31 +32,31 @@
         .create([
           {
             name: 'Skarthia',
-            image: '/src/images/skarthia.jpg',
+            image: 'http://www.skarthia.co.uk/Images/Banner.png',
             members: 'Avichai Myers, Sapir Rajuan, Adam Gigi, Wayne Thompson',
             genre: 'Melodic Death Metal / Groove Metal',
             website: 'http://www.skarthia.co.uk/'
           },
           {
             name: 'Leo and the Bear',
-            image: '../src/images/leoandthebear.jpg',
+            image: 'https://i.ytimg.com/vi/vavtPxjRo30/maxresdefault.jpg',
             members: 'Dave Mitten, Andy Greening, Dave Whitehouse, Ben Race, AB Benson',
             genre: 'Progressive / Groove Metal',
             website: 'https://www.facebook.com/leoandthebear/'
           },
           {
             name: 'Cairo Son',
-            image: '../src/images/cairoson.jpg',
+            image: 'https://s3.amazonaws.com/bit-photos/large/5446358.jpeg',
             members: 'Magdy, Rico, Ed',
             genre: 'Post-Grunge Stoner Rock',
             website: 'http://www.cairoson.com/'
           },
           {
             name: 'Elephant Tree',
-            image: '../src/images/elephanttree.jpg',
+            image: 'http://www.metal-archives.com/images/3/5/4/0/3540386663_photo.jpg?4323',
             members: 'Jack Townley, Peter Holland, Riley MacIntyre, Sam Hart',
             genre: 'Rock/Blues/Doom/Stoner with a garnish of parsley',
-            website: 'http://www.cairoson.com/'
+            website: 'https://www.facebook.com/elephanttreeband/'
           }
         ]);
     })

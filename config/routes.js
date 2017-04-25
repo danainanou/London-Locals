@@ -5,6 +5,7 @@ const sessions      = require('../controllers/sessions');
 const registrations = require('../controllers/registrations');
 const bands         = require('../controllers/bands');
 const comments      = require('../controllers/comments');
+const users         = require('../controllers/users');
 
 function secureRoute(req, res, next) {
   if (!req.session.userId) {
@@ -43,6 +44,14 @@ router.route('/register')
 router.route('/login')
   .get(sessions.new)
   .post(sessions.create);
+
+router.route('/users/:id')
+  .get(users.show)
+  .put(users.update)
+  .delete(users.delete);
+
+router.route('/users/:id/edit')
+  .get(users.edit);
 
 router.route('/logout')
   .get(sessions.delete);

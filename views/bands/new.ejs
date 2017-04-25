@@ -3,34 +3,23 @@
 <form method="POST" action="/bands">
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Name" class="form-control">
+    <input type="text" name="name" id="name" placeholder="Band Name" class="form-control">
   </div>
   <div class="form-group">
-    <label for="releaseDate">Release Date</label>
-    <input type="date" name="releaseDate" id="releaseDate" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="synopsis">Synopsis</label>
-    <textarea name="synopsis" id="synopsis" placeholder="Synopsis" class="form-control"></textarea>
+    <label for="synopsis">Members</label>
+  <input type="text" name="members" id="members" placeholder="Band Members" class="form-control">
   </div>
   <div class="form-group">
     <label for="genre">Genre</label>
-    <select name="genre" id="genre" class="form-control select2">
-      <% genres.forEach((genre) => { %>
-        <option><%= genre %></option>
-      <% }) %>
-    </select>
+    <input type="text" name="genre" id="genre" placeholder="Genre e.g. Stoner" class="form-control">
   </div>
   <div class="form-group">
-    <label for="wikipedia">Wikipedia Link</label>
-    <input type="text" name="wikipedia" id="wikipedia" placeholder="Wikipedia Link" class="form-control">
+    <label for="wikipedia">Website or Facebook Page</label>
+    <input type="text" name="website" id="website" placeholder="Website Link" class="form-control">
   </div>
   <div class="form-group">
-    <label>Images</label>
-    <input type="text" name="images[]" class="form-control">
-    <input type="text" name="images[]" class="form-control">
+    <label>Band Image</label>
     <input type="text" name="images[]" class="form-control">
   </div>
-
-  <button class="btn btn-primary">Add</button>
+  <button class="btn btn-primary">Add Band</button>
 </form>

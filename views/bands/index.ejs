@@ -8,7 +8,7 @@
   <% bands.forEach((band) => { %>
     <div class="col-md-4">
       <div class="card">
-        <div class="card-img-top" style="background-image:url(<%= band.image[0] %>)" alt="<%= band.name %>"></div>
+        <div class="card-img-top" alt="<%= band.name %>"></div>
         <div class="card-block">
           <a href="/bands/<%= band.id %>">
             <h4 class="card-title"><%= band.name %></h4>

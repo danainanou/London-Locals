@@ -13,7 +13,10 @@
 
         <% if (locals.isLoggedIn) { %>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Welcome <%= locals.user.username %></a>
+            <a class="nav-link" href="/bands/new">Add Band</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/<%= locals.user.id %>"> Welcome <%= locals.user.username %></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
