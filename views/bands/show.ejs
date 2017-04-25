@@ -7,10 +7,10 @@
 <h4>Genre</h4>
 <p><%= band.genre %></p>
 <% if(locals.isLoggedIn) { %>
-  <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit</a>
+  <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit Band</a>
   <form method="POST" action="/bands/<%= band.id %>">
     <input type="hidden" name="_method" value="DELETE">
-    <button class="btn btn-danger">Delete</button>
+    <button class="btn btn-danger">Delete Band</button>
   </form>
 <% } %>
 
@@ -22,7 +22,7 @@
   <input type="submit" class="btn">
 </form>
 
-<ul>
+<ul class="comments" data-spy="scroll">
 <% band.comments.forEach(comment => { %>
   <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
   <%= comment.body %></li>

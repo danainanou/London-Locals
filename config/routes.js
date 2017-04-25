@@ -53,6 +53,9 @@ router.route('/users/:id')
 router.route('/users/:id/edit')
   .get(users.edit);
 
+router.route('/users/:id/comments')
+  .post(comments.usercreate);
+
 router.route('/logout')
   .get(sessions.delete);
 
