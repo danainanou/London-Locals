@@ -1,31 +1,64 @@
 <h1><%= band.name %></h1>
 
-<img src="<%= band.image %>" alt="<%= band.name %>/'s photo">
-<button type="button" class="btn btn-secondary btn-sm">&#10025;</button>
-
-<a href="<%= band.website %>">Website</a>
-
-<h4>Genre</h4>
-<p><%= band.genre %></p>
-<% if(locals.isLoggedIn) { %>
-  <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit Band</a>
-  <form method="POST" action="/bands/<%= band.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button class="btn btn-danger">Delete Band</button>
-  </form>
-<% } %>
-
-<ul class="comments" data-spy="scroll">
-<% band.comments.forEach(comment => { %>
-  <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
-  <%= comment.body %></li>
-<% }) %>
-</ul>
-
-<form method="POST" action="/bands/<%= band.id %>/comments">
-  <div class="form-group">
-    <label for="body">Please leave a comment</label>
-    <textarea id="body" name="body" class="form-control"></textarea>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4>Genre</h4>
+      <p><%= band.genre %></p>
+    </div>
+    <div class="col">
+      <img src="<%= band.image %>" alt="<%= band.name %>/'s photo">
+    </div>
+    <div class="col">
+      <h4>Members</h4>
+      <p><%= band.members %></p>
+      <button type="button" class="btn btn-secondary">&#10025;</button>
+    </div>
   </div>
-  <input type="submit" class="btn">
-</form>
+</div>
+
+<div class="band-website">
+  <a href="<%= band.website %>">Visit the band's official Website or Facebook page here!</a>
+</div>
+<div class="social-media">
+  <p>Alternatively visit the band's social media!</p>
+  <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+  <a href="#"><i class="fa fa-bandcamp" aria-hidden="true"></i></a>
+  <a href="#"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+  <a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+<p class="note">Please note that some of the bands may not have all options available.</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="btn-group" role="group">
+        <% if(locals.isLoggedIn) { %>
+          <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit Band</a>
+          <form method="POST" action="/bands/<%= band.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="btn btn-danger">Delete Band</button>
+          </form>
+          <% } %>
+        </div>
+      </div>
+      <div class="col">
+        <ul class="comments" data-spy="scroll">
+          <% band.comments.forEach(comment => { %>
+            <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
+            <%= comment.body %></li>
+            <% }) %>
+          </ul>
+          <form method="POST" action="/bands/<%= band.id %>/comments">
+            <div class="form-group">
+              <label for="body">Tell the world how awesome this band is</label>
+              <textarea id="body" name="body" class="form-control"></textarea>
+            </div>
+            <input type="submit" class="btn">
+          </form>
+        </div>
+      </div>
+    </div>

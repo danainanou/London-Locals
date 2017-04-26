@@ -3,24 +3,69 @@ body {
   background: #EFEEEA;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  color: #191200;
+  color: #332607;
 }
 
 h1 {
   font-family: 'Francois One', sans-serif;
+  padding: 30px;
 }
 
 img {
-  width: 300px;
+  width: 400px;
+}
+
+.band-website {
+  padding: 20px;
+  a {
+    font-size: 20px;
+    transition: background-color 2s ease;
+    text-decoration: none;
+    background: #1E3107;
+    padding: 5px;
+    color: #EFEEEA;
+  }
+  a:hover {
+    transition: background-color 1s ease;
+    background: #EFEEEA;
+    color: #1E3107;
+  }
+}
+
+.social-media {
+  font-size: 20px;
+  a {
+    font-size: 25px;
+    color: #1E3107;
+    padding: 5px;
+  }
+  .note {
+    padding-top: 15px;
+    font-style: italic;
+  }
+}
+
+.home {
+  width: 1200px;
+  height: 600px;
+  opacity: 0.3;
+}
+
+.card {
+  height: 120px;
+  margin-top: 20px;
+  border-radius: 0px;
 }
 
 
+
 .comments {
-  background-color: grey;
+  background-color: rgba(30, 49, 7, 0.3);
   list-style: none;
   text-align: left;
   position: relative;
-  width: 400px;
+  width: 450px;
   height: 200px;
   overflow-y: scroll;
+  padding-left: 0px;
 }
