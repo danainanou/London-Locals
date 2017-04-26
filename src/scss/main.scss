@@ -1,14 +1,24 @@
 body {
   font-family: sans-serif;
-  background: hotpink;
+  background: #EFEEEA;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #191200;
+}
+
+h1 {
+  font-family: 'Francois One', sans-serif;
 }
 
 img {
   width: 300px;
 }
 
+
 .comments {
   background-color: grey;
+  list-style: none;
+  text-align: left;
   position: relative;
   width: 400px;
   height: 200px;

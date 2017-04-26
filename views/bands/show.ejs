@@ -1,6 +1,7 @@
 <h1><%= band.name %></h1>
 
 <img src="<%= band.image %>" alt="<%= band.name %>/'s photo">
+<button type="button" class="btn btn-secondary btn-sm">&#10025;</button>
 
 <a href="<%= band.website %>">Website</a>
 
@@ -14,6 +15,13 @@
   </form>
 <% } %>
 
+<ul class="comments" data-spy="scroll">
+<% band.comments.forEach(comment => { %>
+  <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
+  <%= comment.body %></li>
+<% }) %>
+</ul>
+
 <form method="POST" action="/bands/<%= band.id %>/comments">
   <div class="form-group">
     <label for="body">Please leave a comment</label>
@@ -21,10 +29,3 @@
   </div>
   <input type="submit" class="btn">
 </form>
-
-<ul class="comments" data-spy="scroll">
-<% band.comments.forEach(comment => { %>
-  <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
-  <%= comment.body %></li>
-<% }) %>
-</ul>
