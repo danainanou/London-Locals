@@ -1,6 +1,6 @@
 <h1>Edit your profile <%= locals.user.username %></h1>
 
-<form method="POST" action="/users/<%= user.id %>">
+<form class="form" method="POST" action="/users/<%= user.id %>">
   <input type="hidden" name="_method" value="PUT">
   <div class="form-group">
     <label for="username">Edit Username</label>

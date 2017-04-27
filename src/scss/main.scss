@@ -175,10 +175,13 @@ img {
 .centered {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%,-50%);
   z-index: 2;
   color: #EFEEEA;
+  h1 {
+    font-size: 100px;
+  }
 }
 
 .favourite-bands {
@@ -192,4 +195,13 @@ img {
       color: #1E3107;
     }
   }
+}
+
+.form {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.navbar-brand {
+  text-align: left;
 }
