@@ -62,6 +62,9 @@ router.route('/users/:id/edit')
 router.route('/users/:id/comments')
   .post(comments.usercreate);
 
+router.route('/users/:userId/comments/:commentId/delete')
+  .delete(comments.usersdelete);
+
 router.route('/logout')
   .get(sessions.delete);
 

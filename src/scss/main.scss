@@ -55,6 +55,7 @@ img {
   height: 120px;
   margin: 20px 10px;
   border-radius: 0px;
+  transition: background-color 2s ease;
   background: #EFEEEA;
   border: 1px solid #332607;
   a {
@@ -63,6 +64,25 @@ img {
   }
   p {
     display: none;
+  }
+  h4 {
+    font-size: 30px;
+    padding: 25px;
+  }
+}
+
+.card:hover {
+  transition: background-color 2s ease;
+  background: #332607;
+  a {
+    color: #EFEEEA;
+  }
+  p {
+    display: block;
+  }
+  h4 {
+    font-size: 25px;
+    padding: 0;
   }
 }
 
@@ -151,3 +171,33 @@ img {
 //     top: -100px;
 //   }
 // }
+
+.homepage {
+  background: url(/images/unicorn.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  width: 100%;
+  height: calc(100vh - 56px);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  color: #EFEEEA;
+}

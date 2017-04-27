@@ -50,10 +50,12 @@
             <li>
               <a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
               <p><%= comment.body %></p>
+              <% if(locals.isLoggedIn) { %>
               <form method="POST" action="/bands/<%= band.id %>/comments/<%= comment.id %>/delete">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" value="delete">
               </form>
+              <% } %>
             </li>
             <% }) %>
           </ul>

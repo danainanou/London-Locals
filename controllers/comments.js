@@ -66,9 +66,20 @@ function userCommentsCreate(req, res, next) {
     .catch(next);
 }
 
+function userCommentsDelete(req, res, next) {
+  User
+    .findByIdAndUpdate({ _id: req.params.userId }, { $pull: { 'comments': { _id: req.params.commentId }} }, { new: true })
+    .exec()
+    .then(user => {
+      console.log(user);
+      res.redirect(`/users/${user._id}`);
+    })
+    .catch(next);
+}
+
 module.exports = {
   bandcreate: bandCommentsCreate,
   bandsdelete: bandCommentsDelete,
   usercreate: userCommentsCreate,
-
+  usersdelete: userCommentsDelete
 };

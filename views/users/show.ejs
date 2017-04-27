@@ -1,41 +1,43 @@
 <h1>This is your profile page <%= locals.user.username %> !</h1>
-<h2>And it looks awfully empty :(</h2>
 
-<ul class="comments container" data-spy="scroll">
-  <% user.comments.forEach(comment => { %>
-    <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
-    <%= comment.body %></li>
-    <% }) %>
-</ul>
+<div class="col">
+  <div class="btn-group" role="group">
+    <a href="/users/<%= user.id %>/edit" class="btn btn-primary">Edit Account</a>
+    <form method="POST" action="/users/<%= user.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="btn btn-outline-danger">Delete Account</button>
+    </form>
+  </div>
+</div>
+
 
 <ul>
   <% user.favourites.forEach(favourite => { %>
     <li><a href="/bands/<%= favourite._id %>"><%= favourite.name %></a></li>
-  <% }); %>
-</ul>
+    <% }); %>
+  </ul>
 
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <form method="POST" action="/users/<%= user.id %>/comments">
-        <div class="form-group">
-          <label for="body">Leave a comment on <%= locals.user.username %>'s page </label>
-          <textarea id="body" name="body" class="form-control"></textarea>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="comments container" data-spy="scroll">
+          <% user.comments.forEach(comment => { %>
+            <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
+            <%= comment.body %></li>
+            <% if(locals.isLoggedIn) { %>
+              <form method="POST" action="/users/<%= user.id %>/comments/<%= comment.id %>/delete">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="delete">
+              </form>
+              <% } %>
+              <% }) %>
+            </ul>
+            <form method="POST" action="/users/<%= user.id %>/comments">
+              <div class="form-group">
+                <label for="body">Leave a comment on <%= locals.user.username %>'s page </label>
+                <textarea id="body" name="body" class="form-control"></textarea>
+              </div>
+              <input type="submit" class="btn">
+            </form>
+          </div>
         </div>
-        <input type="submit" class="btn">
-      </form>
-    </div>
-
-    <div class="col">
-      <div class="btn-group" role="group">
-        <a href="/users/<%= user.id %>/edit" class="btn btn-primary">Edit Account</a>
-        <form method="POST" action="/users/<%= user.id %>">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="btn btn-outline-danger">Delete Account</button>
-        </form>
-      </div>
-    </div>
-  </div>

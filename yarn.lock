@@ -1189,6 +1189,10 @@ emitter-steward@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/emitter-steward/-/emitter-steward-1.0.0.tgz#f3411ade9758a7565df848b2da0cbbd1b46cbd64"
 
+emojione@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/emojione/-/emojione-3.0.1.tgz#4106306d842deee9de170f45c372988afea1262c"
+
 encodeurl@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"

@@ -78,7 +78,7 @@ function usersAddFavourite(req, res) {
         console.log(user);
         res.sendStatus(200);
       } else {
-        res.sendStatus(500, { message: 'band already favourited'});
+        res.sendStatus(500, { message: 'This band is already in your favourites list!'});
       }
     })
     .catch(err => {
@@ -86,6 +86,7 @@ function usersAddFavourite(req, res) {
       res.sendStatus(500);
     });
 }
+
 
 module.exports = {
   show: usersShow,
