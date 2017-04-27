@@ -12,7 +12,7 @@
     <div class="col">
       <h4>Members</h4>
       <p><%= band.members %></p>
-      <button type="button" class="btn btn-secondary">&#10025;</button>
+      <button type="button" class="btn btn-secondary"><i class="fa fa-star-o" aria-hidden="true"></i></button>
     </div>
   </div>
 </div>
@@ -20,33 +20,32 @@
 <div class="band-website">
   <a href="<%= band.website %>">Visit the band's official Website or Facebook page here!</a>
 </div>
-<div class="social-media">
-  <p>Alternatively visit the band's social media!</p>
-  <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-  <a href="#"><i class="fa fa-bandcamp" aria-hidden="true"></i></a>
-  <a href="#"><i class="fa fa-spotify" aria-hidden="true"></i></a>
-  <a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
-  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-<p class="note">Please note that some of the bands may not have all options available.</p>
-</div>
-
 <div class="container">
   <div class="row">
     <div class="col">
+    <div class="social-media">
+      <p>Alternatively visit the band's social media!</p>
+      <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-bandcamp" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-spotify" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <p class="note">Please note that some of the bands may not have all options available.</p>
+    </div>
       <div class="btn-group" role="group">
         <% if(locals.isLoggedIn) { %>
-          <a href="/bands/<%= band.id %>/edit" class="btn btn-primary">Edit Band</a>
+          <a href="/bands/<%= band.id %>/edit" class="btn btn-outline-success">Edit Band</a>
           <form method="POST" action="/bands/<%= band.id %>">
           <input type="hidden" name="_method" value="DELETE">
-          <button class="btn btn-danger">Delete Band</button>
+          <button class="btn btn-outline-danger">Delete Band</button>
           </form>
           <% } %>
         </div>
       </div>
       <div class="col">
-        <ul class="comments" data-spy="scroll">
+        <ul class="comments container" data-spy="scroll">
           <% band.comments.forEach(comment => { %>
             <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
             <%= comment.body %></li>
@@ -57,7 +56,7 @@
               <label for="body">Tell the world how awesome this band is</label>
               <textarea id="body" name="body" class="form-control"></textarea>
             </div>
-            <input type="submit" class="btn">
+            <input type="submit" class="btn submit btn-outline-success" value="Submit Comment">
           </form>
         </div>
       </div>
