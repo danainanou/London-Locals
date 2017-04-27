@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h1>This is your profile page <%= locals.user.username %> !</h1>
+    <div class="col-6 editbtn">
+      <a href="/users/<%= user.id %>/edit" class="btn btn-primary">Edit Account</a>
+      <form method="POST" action="/users/<%= user.id %>">
     </div>
-    <div class="col">
-      <div class="btn-group" role="group">
-        <a href="/users/<%= user.id %>/edit" class="btn btn-primary">Edit Account</a>
-        <form method="POST" action="/users/<%= user.id %>">
+    <div class="col-6 deletebtn">
           <input type="hidden" name="_method" value="DELETE">
           <button class="btn btn-outline-danger">Delete Account</button>
         </form>
-      </div>
     </div>
-
+    <div class="row">
+    <h1>This is your profile page <%= locals.user.username %> !</h1>
+  </div>
     <div class="row favourite-bands">
       <ul>
+        <h4>Your Favourite Bands</h4>
         <% user.favourites.forEach(favourite => { %>
           <li><a href="/bands/<%= favourite._id %>"><%= favourite.name %></a></li>
           <% }); %>

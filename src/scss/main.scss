@@ -180,3 +180,16 @@ img {
   z-index: 2;
   color: #EFEEEA;
 }
+
+.favourite-bands {
+  padding: 100px 100px 50px 100px;
+  ul {
+    text-decoration: none;
+    list-style: none;
+    a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1E3107;
+    }
+  }
+}
