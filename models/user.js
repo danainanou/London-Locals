@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt   = require('bcrypt');
+const Comment  = require('../models/comment');
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  comments: [Comment.schema],
+  favourites: [{ type: mongoose.Schema.ObjectId, ref: 'Band', required: true }]
 });
 
 userSchema

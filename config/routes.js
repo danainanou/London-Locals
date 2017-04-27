@@ -37,6 +37,9 @@ router.route('/bands/:id/edit')
 router.route('/bands/:id/comments')
   .post(comments.create);
 
+router.route('/bands/:id/favourite')
+  .post(users.addFavourite);
+
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);

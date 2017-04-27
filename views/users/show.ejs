@@ -1,6 +1,22 @@
 <h1>This is your profile page <%= locals.user.username %> !</h1>
 <h2>And it looks awfully empty :(</h2>
 
+<ul class="comments container" data-spy="scroll">
+  <% user.comments.forEach(comment => { %>
+    <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
+    <%= comment.body %></li>
+    <% }) %>
+</ul>
+
+<ul>
+  <% user.favourites.forEach(favourite => { %>
+    <li><a href="/bands/<%= favourite._id %>"><%= favourite.name %></a></li>
+  <% }); %>
+</ul>
+
+
+
+
 <div class="container">
   <div class="row">
     <div class="col">

@@ -62,32 +62,25 @@
     })
     .then((bands) => {
       console.log(`${bands.length} bands created!`);
-
-      return User.findOne({
-        username: 'dnanou'
-      })
-      .exec()
-      .then(user => {
-        return Band.findOneAndUpdate({
-          name: 'Skarthia'
-        }, {
-          comments: {
-            $push: {
-              body: 'They are so cool!',
-              user: user._id
-            }
-          }
-        }, {
-          new: true
-        })
-        .exec();
-      })
-      .catch(err => {
-        throw new Error(err);
-      });
+      return User.findOne({ username: 'dnanou' }).exec();
     })
-    .then(comment => {
-      console.log(comment);
+    .then(user => {
+      return Band.findOneAndUpdate({
+        name: 'Skarthia'
+      }, {
+        $push: {
+          'comments': {
+            body: 'They are so cool!',
+            user: user._id
+          }
+        }
+      }, {
+        new: true
+      })
+      .exec();
+    })
+    .then(band => {
+      console.log(band.comments);
     })
     .catch((err) => {
       console.log(err);

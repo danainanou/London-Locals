@@ -3,7 +3,7 @@ const User = require('../models/user');
 function usersShow(req, res, next) {
   User
     .findById(req.params.id)
-    .populate('comments.user')
+    .populate('comments.user favourites')
     .exec()
     .then(user => {
       if (!user) {
@@ -67,9 +67,30 @@ function usersDelete(req, res, next) {
     .catch(next);
 }
 
+function usersAddFavourite(req, res) {
+  User
+    .findById(res.locals.user._id)
+    .exec()
+    .then(user => {
+      if (user.favourites.indexOf(req.params.id) === -1) {
+        user.favourites.push(req.params.id);
+        user.save();
+        console.log(user);
+        res.sendStatus(200);
+      } else {
+        res.sendStatus(500, { message: 'band already favourited'});
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+}
+
 module.exports = {
   show: usersShow,
   edit: usersEdit,
   update: usersUpdate,
-  delete: usersDelete
+  delete: usersDelete,
+  addFavourite: usersAddFavourite
 };

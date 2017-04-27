@@ -61,7 +61,12 @@ img {
     text-decoration: none;
     color: #332607;
   }
+  p {
+    display: none;
+  }
 }
+
+
 
 .btn-group {
   padding: 10px;
@@ -121,12 +126,7 @@ img {
   margin-top: 30px;
 }
 
-//
-// @import "compass/css3";
-//
-// h1 { color: #f90; text-shadow: 1px 1px 0 #000; }
-//
-// div { background: #f90; width: 500px; padding: 20px; position: relative; overflow: hidden; }
+
 // div:after {
 //    content: ''; position: absolute; top: 0; left: 1%; display: block; width: 97%; height: 100%; background: transparent; border: 1px solid #000; border-top: none; border-bottom: none;
 // }
