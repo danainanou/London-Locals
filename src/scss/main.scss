@@ -64,8 +64,8 @@ img {
     color: #332607;
   }
   p {
-    transition: opacity 0.8s ease-out;
-    opacity: 0;
+    transition: display 2s ease-out;
+    display: none;
   }
   h4 {
     transition: font-size 1s ease-in;
@@ -82,8 +82,8 @@ img {
     color: #EFEEEA;
   }
   p {
-    transition: opacity 0.8s ease-in;
-    opacity: 1
+    transition: display 2s ease-in;
+    display: block;
   }
   h4 {
     transition: font-size padding 1s ease-in;
@@ -175,12 +175,13 @@ img {
 .centered {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 30%;
   transform: translate(-50%,-50%);
   z-index: 2;
   color: #EFEEEA;
   h1 {
-    font-size: 100px;
+    font-size: 90px;
+    padding-top: 0;
   }
 }
 
