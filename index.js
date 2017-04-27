@@ -81,3 +81,6 @@ app.use((err, req, res, next) => {
 app.use(router);
 
 app.listen(port, () => console.log(`Server up and running on port: ${env.port}.`));
+
+
+// a note from nat
