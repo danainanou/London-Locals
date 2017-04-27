@@ -1,7 +1,7 @@
 const Band = require('../models/band');
 const User = require('../models/user');
 
-function commentsCreate(req, res, next) {
+function bandCommentsCreate(req, res, next) {
   Band
     .findById(req.params.id)
     .exec()
@@ -24,6 +24,17 @@ function commentsCreate(req, res, next) {
     .then((band) => {
       console.log(band);
       res.redirect(`/bands/${req.params.id}`);
+    })
+    .catch(next);
+}
+
+function bandCommentsDelete(req, res, next) {
+  Band
+    .findByIdAndUpdate({ _id: req.params.bandId }, { $pull: { 'comments': { _id: req.params.commentId }} }, { new: true })
+    .exec()
+    .then(band => {
+      console.log(band);
+      res.redirect(`/bands/${band._id}`);
     })
     .catch(next);
 }
@@ -56,7 +67,8 @@ function userCommentsCreate(req, res, next) {
 }
 
 module.exports = {
-  create: commentsCreate,
-  usercreate: userCommentsCreate
+  bandcreate: bandCommentsCreate,
+  bandsdelete: bandCommentsDelete,
+  usercreate: userCommentsCreate,
 
 };

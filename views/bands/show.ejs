@@ -47,8 +47,14 @@
       <div class="col">
         <ul class="comments container" data-spy="scroll">
           <% band.comments.forEach(comment => { %>
-            <li><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
-            <%= comment.body %></li>
+            <li>
+              <a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a>
+              <p><%= comment.body %></p>
+              <form method="POST" action="/bands/<%= band.id %>/comments/<%= comment.id %>/delete">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="delete">
+              </form>
+            </li>
             <% }) %>
           </ul>
           <form method="POST" action="/bands/<%= band.id %>/comments">

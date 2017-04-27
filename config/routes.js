@@ -35,7 +35,10 @@ router.route('/bands/:id/edit')
   .get(secureRoute, bands.edit);
 
 router.route('/bands/:id/comments')
-  .post(comments.create);
+  .post(comments.bandcreate);
+
+router.route('/bands/:bandId/comments/:commentId/delete')
+  .delete(comments.bandsdelete);
 
 router.route('/bands/:id/favourite')
   .post(users.addFavourite);
