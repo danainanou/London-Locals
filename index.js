@@ -4,7 +4,6 @@ const expressLayouts  = require('express-ejs-layouts');
 const bodyParser      = require('body-parser');
 const session         = require('express-session');
 const flash           = require('express-flash');
-const emojione        = require('emojione');
 const mongoose        = require('mongoose');
 mongoose.Promise      = require('bluebird');
 const methodOverride  = require('method-override');
@@ -81,6 +80,3 @@ app.use((err, req, res, next) => {
 app.use(router);
 
 app.listen(port, () => console.log(`Server up and running on port: ${env.port}.`));
-
-
-// a note from nat
