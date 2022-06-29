@@ -10,6 +10,8 @@ London Locals is a website aimed to support underepresented bands in the London 
 
 London Locals is built on Node.JS and Express. It stores its information in a MongoDB and uses Mongoose to formulate models.
 
+![Home Screen](https://user-images.githubusercontent.com/22467291/176430522-a54393e6-d048-4aa7-8214-c94e486b69ef.png)
+
 #Features
 
 The homepage gives a brief description of the website when the main logo is hovered upon. 
