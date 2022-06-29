@@ -16,11 +16,17 @@ London Locals is built on Node.JS and Express. It stores its information in a Mo
 
 The homepage gives a brief description of the website when the main logo is hovered upon. 
 
+![Home Screen Hover](https://user-images.githubusercontent.com/22467291/176431472-f24255de-b085-4e16-8af7-70efcd58e569.png)
+
 The user then can navigate to the band directory and is then able to register and log in which provides them with the ability to add, edit and delete bands from the database. Bands can be favourited by the user and then displayed on their unique profile. 
 
 A comment area is available both on the band page and on their profile. The profile can be edited and deleted and the comments provide an option to be deleted as well.
 
+![Band Profile Page](https://user-images.githubusercontent.com/22467291/176433032-29409cbe-e376-4ae8-b52c-1253c2fe53e7.png)
+
 #Styling
+
+![Band Discovery Page](https://user-images.githubusercontent.com/22467291/176433044-bc5dec5a-8381-47b1-b7c4-bdf54a4cebea.png)
 
 Even though my attention of artists focuses on heavier sounds I wanted to not go down the path of another "edgy" heavy metal looking website which focuses on blacks, reds and almost unreadable fonts.
 
@@ -39,5 +45,3 @@ Most of the project was quite straightforward code-wise and it had a very step-b
 Another challenge I faced was trying to set an opacity filter to the background image but I soon realised that it was a lot more difficult than what I anticipated.  
 
 Having said this I overcame these challenges by asking for help when I believed I needed it because at the end of it I am here to learn how to incorporate my ideas and concepts into code.
-
-TBC...
